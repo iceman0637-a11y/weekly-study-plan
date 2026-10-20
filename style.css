@@ -1,0 +1,146 @@
+/* ==========================================================
+   1. RESET & VARIABLES
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: #f8fafc;
+  --border: rgba(255, 255, 255, 0.18);
+  --overlay: rgba(15, 23, 42, 0.7);
+}
+
+/* ==========================================================
+   2. PAGE LAYOUT
+   ========================================================== */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  color: var(--text);
+
+  /* dark overlay on top of the page image (--bg-image is set per page) */
+  background-image:
+    linear-gradient(var(--overlay), var(--overlay)),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Per-page background images */
+body.hardware { --bg-image: url("images/hardware.avif"); }
+body.se       { --bg-image: url("images/se.jpg"); }
+body.web      { --bg-image: url("images/web.avif"); }
+
+header,
+footer {
+  padding: 1rem 2rem;
+}
+
+/* main fills the free space and centers its content */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+section {
+  text-align: center;
+}
+
+/* ==========================================================
+   3. HEADING
+   ========================================================== */
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================================
+   4. CLOCK
+   ========================================================== */
+#clock {
+  margin-bottom: 2.5rem;
+}
+
+#time {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+#date {
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+  color: rgba(248, 250, 252, 0.65);
+}
+
+/* ==========================================================
+   5. BUTTONS
+   ========================================================== */
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.options a {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  min-width: 220px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: black;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.options a:hover,
+.options a:focus-visible {
+  transform: translateY(-2px);
+  background: rgb(173, 165, 165);
+  outline: none;
+}
+
+.options a:active {
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   6. RESPONSIVE (phones)
+   ========================================================== */
+@media (max-width: 600px) {
+  .options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options a {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ==========================================================
+   7. PAGE TRANSITIONS
+   ========================================================== */
+@view-transition {
+  navigation: auto;
+}
