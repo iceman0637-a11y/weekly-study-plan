@@ -1,3 +1,22 @@
+
+/*==============================================================
+ H E A D E R
+ ============================================================= */
+
+header{
+  background-color: black;
+  padding: 59px;
+}
+
+header p {
+  text-align: center;
+}
+
+
+
+
+
+
 /* ==========================================================
    1. RESET & VARIABLES
    ========================================================== */
@@ -35,7 +54,7 @@ body {
 }
 
 /* Per-page background images */
-body.hardware { --bg-image: url("images/hardware.avif"); }
+body.hardware { --bg-image: url("images/hardware.webp"); }
 body.se       { --bg-image: url("images/se.jpg"); }
 body.web      { --bg-image: url("images/web.avif"); }
 
@@ -72,6 +91,18 @@ h1 {
    ========================================================== */
 #clock {
   margin-bottom: 2.5rem;
+  display: inline-block;
+  padding: 16px 28px;
+  font-family: system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #fff;
+
+  background: rgba(94, 94, 94, 0.15);   /* see-through */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 #time {
@@ -86,6 +117,9 @@ h1 {
   font-size: 1.1rem;
   color: rgba(248, 250, 252, 0.65);
 }
+
+
+
 
 /* ==========================================================
    5. BUTTONS
@@ -146,6 +180,22 @@ h1 {
   navigation: auto;
 }
 
+/* ===========================================================
+ GOALS
+ ============================================================ */
+
 #goals {
   list-style-position: inside;
+  font-size: 15px;
+  
+}
+
+#goals a{
+  text-decoration:underline;
+  color: white;
+  
+}
+
+#goals li{
+  padding: 10px;
 }
