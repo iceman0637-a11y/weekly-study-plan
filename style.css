@@ -54,7 +54,7 @@ body {
 }
 
 /* Per-page background images */
-body.hardware { --bg-image: url("images/hardware.webp"); }
+body.hardware { --bg-image: url("images/hardware.avif"); }
 body.se       { --bg-image: url("images/se.jpg"); }
 body.web      { --bg-image: url("images/web.avif"); }
 
